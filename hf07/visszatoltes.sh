@@ -55,7 +55,7 @@ BASE_NAME="${ARCHIVE_NAME%.tar.gz}"
 ARCHIVE_PATH="$BACKUP_DIR/$ARCHIVE_NAME"
 SHA_PATH="$BACKUP_DIR/${BASE_NAME}.sha256"
 
-if [ ! -f "$ARCHIVE_PATH" ] \vert{}\vert{} [ ! -f "$SHA_PATH" ]; then
+if [ ! -f "$ARCHIVE_PATH" ] || [ ! -f "$SHA_PATH" ]; then
     printf 'HIBA: Hianyzo archivum vagy .sha256 fajl: %s\n' "$ARCHIVE_NAME" >&2
     exit 1
 fi
